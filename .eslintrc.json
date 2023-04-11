@@ -1,0 +1,150 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
+	],
+	"overrides": [
+		{
+			"files": ["*.js", "*.jsx", "*.ts", "*.tsx", "*.json"],
+			"rules": {
+				"prettier/prettier": "error"
+			}
+		}
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["react", "@typescript-eslint", "prettier"],
+	"rules": {
+		// 箭头函数括号前后总是有括号
+		"arrow-parens": ["error", "always"],
+		// 尾部逗号，仅在多行时需要添加
+		"comma-dangle": ["error", "always"],
+		// 额外的分号报错
+		"no-extra-semi": "error",
+
+		"indent": ["error", "tab"],
+
+		"linebreak-style": ["error", "unix"],
+		// 双引号
+		"quotes": ["error", "double"],
+		// 分号
+		"semi": ["error", "always"],
+
+		"comma-style": "warn",
+		// 避免使用 React 但未导入的警告
+		"jsx-uses-react": "on",
+		// 避免使用 JSX 但未导入 React 的警告
+		"react-in-jsx-scope": "on",
+		// 检查未使用的变量
+		"jsx-uses-vars": "warn",
+		// 禁止在 JSX 属性中省略花括号，要求在 JSX 子元素中使用花括号
+		"jsx-curly-brace-presence": [
+			"error",
+			{ "props": "never", "children": "always" }
+		],
+		// 指定 JSX 文件的扩展名
+		"jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
+		// 指定 JSX 的缩进
+		"jsx-indent": ["error", 2],
+		// 指定 JSX 属性的缩进
+		"jsx-indent-props": ["error", 2],
+		// 指定 JSX 嵌套的最大深度
+		"jsx-max-depth": ["error", { "max": 4 }],
+		// 指定 JSX 属性的最大数量和位置
+		"jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
+		// 指定每个 JSX 表达式占一行，但允许字符串字面量在同一行
+		"jsx-one-expression-per-line": ["error", { "allow": "literal" }],
+		// 禁止在 JSX 属性中使用多个空格
+		"jsx-props-no-multi-spaces": "error",
+		// 允许使用属性扩展
+		"jsx-props-no-spreading": "off",
+		// 不强制排序默认属性
+		"jsx-sort-default-props": "off",
+		// 不强制排序属性
+		"jsx-sort-props": "off",
+		// 禁止在 setState() 中使用 this.state
+		"no-access-state-in-setstate": "error",
+		// 禁止在数组元素上使用数组索引作为 key 属性的值
+		"no-array-index-key": "error",
+		// 禁止在组件上使用 children 属性
+		"no-children-prop": "error",
+		// 禁止使用 dangerouslySetInnerHTML 属性
+		"no-danger": "error",
+		// 禁止使用已弃用的 React API
+		"no-deprecated": "error",
+		// 禁止在 componentDidMount() 中使用 setState()
+		"no-did-mount-set-state": "error",
+		// 禁止在 componentDidUpdate() 中使用 setState()
+		"no-did-update-set-state": "error",
+		// 禁止直接修改 state
+		"no-direct-mutation-state": "error",
+		// 禁止使用 findDOMNode() 方法
+		"no-find-dom-node": "error",
+		// 禁止使用 isMounted() 方法
+		"no-is-mounted": "error",
+		// 禁止在一个文件中定义多个组件
+		"no-multi-comp": ["error", { "ignoreStateless": true }],
+		// 禁止在 shouldComponentUpdate() 中返回无用的布尔值
+		"no-redundant-should-component-update": "error",
+		// 禁止在组件的 render 方法中返回值
+		"no-render-return-value": "error",
+		// 允许使用 setState() 方法
+		"no-set-state": "off",
+		// 禁止使用字符串作为 ref 属性的值
+		"no-string-refs": "error",
+		// 禁止在函数组件中使用 this
+		"no-this-in-sfc": "error",
+		// 禁止使用错误的 prop 名称
+		"no-typos": "error",
+		// 禁止在 JSX 中使用未转义的实体字符
+		"no-unescaped-entities": "error",
+		// 禁止使用未知的 DOM 属性
+		"no-unknown-property": "error",
+		// 禁止定义未使用的 prop 类型
+		"no-unused-prop-types": "error",
+		// 禁止定义未使用的 state 变量
+		"no-unused-state": "error",
+		// 建议使用 ES6 类来定义组件
+		"prefer-es6-class": ["error", "always"],
+		// 建议使用无状态函数组件
+		"prefer-stateless-function": "error",
+		// 检查组件的 prop 类型定义
+		"prop-types": "error",
+		// 要求定义组件的默认 prop 值
+		"require-default-props": "error",
+		// 要求在组件的 render 方法中返回值
+		"require-render-return": "error",
+		// 要求没有子元素的组件使用自闭合标记
+		"self-closing-comp": "error",
+		// 强制定义组件的方法的顺序
+		"sort-comp": [
+			"error",
+			{
+				"order": [
+					"static-methods",
+					"instance-variables",
+					"lifecycle",
+					"render",
+					"methods"
+				]
+			}
+		],
+		// 禁止在 style 属性中使用非对象值
+		"style-prop-object": "error",
+		// 禁止在空标签中添加子元素
+		"void-dom-elements-no-children": "error"
+	}
+}
