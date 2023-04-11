@@ -1,50 +1,57 @@
 {
-	"name": "xizhi-react-template",
-	"version": "0.0.1",
-	"private": true,
-	"author": {
-		"name": "xizhi-jacobzha"
-	},
-	"type": "module",
-	"scripts": {
-		"build": "tsc && vite build",
-		"dev": "vite",
-		"format": "prettier . --write --ignore-path .gitignore && git update-index --again",
-		"lint": "eslint . --ext .ts,.tsx --fix --ignore-path .gitignore",
-		"prepare": "husky install",
-		"preview": "vite preview"
-	},
-	"lint-staged": {
-		"*.{css,md,json}": [
-			"prettier --write"
-		],
-		"*.ts?(x)": [
-			"eslint",
-			"prettier --write"
-		],
-		"package.json": "npx sort-package-json"
-	},
-	"dependencies": {
-		"antd": "^5.4.1",
-		"lint-staged": "^13.2.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@types/react": "^18.0.28",
-		"@types/react-dom": "^18.0.11",
-		"@typescript-eslint/eslint-plugin": "^5.58.0",
-		"@typescript-eslint/parser": "^5.58.0",
-		"@vitejs/plugin-react": "^3.1.0",
-		"eslint": "^8.38.0",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-plugin-jsx-a11y": "^6.7.1",
-		"eslint-plugin-prettier": "^4.2.1",
-		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"husky": "^8.0.3",
-		"prettier": "^2.8.7",
-		"typescript": "^4.9.3",
-		"vite": "^4.2.0"
-	}
+  "name": "xizhi-react-template",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "xizhi-jacobzha"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "prettier . --write --ignore-path .gitignore && git update-index --again",
+    "lint": "eslint . --ext .ts,.tsx --fix --ignore-path .gitignore",
+    "prepare": "husky install",
+    "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{css,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --write"
+    ],
+    "package.json": "npx sort-package-json"
+  },
+  "dependencies": {
+    "antd": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "@vitejs/plugin-legacy": "^4.0.2",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "sort-package-json": "^1.57.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
 }
