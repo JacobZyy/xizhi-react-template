@@ -17,7 +17,7 @@
     "sourceMap": true,
     "types": ["vite/client", "node"],
     "useDefineForClassFields": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
