@@ -59,6 +59,7 @@
   "rules": {
     // 箭头函数括号前后总是有括号
     "arrow-parens": ["error", "always"],
+
     // 尾部逗号，仅在多行时需要添加
     "comma-dangle": [
       "error",
@@ -70,28 +71,53 @@
         "functions": "never"
       }
     ],
+
+    "@typescript-eslint/no-unused-vars": "off",
+
     // jsx后方不添加逗号
     "react/jsx-closing-bracket-location": [1, "line-aligned"],
+
     // 额外的分号报错
     "no-extra-semi": "error",
+
+    // 2个空格缩进
     "indent": ["error", 2],
+
+    // 换行符风格
     "linebreak-style": ["error", "unix"],
-    // 双引号
+
+    // 使用双引号
     "quotes": ["error", "double"],
-    // 分号
+
+    // 总是加分号
     "semi": ["error", "always"],
 
+    // 逗号的位置
     "comma-style": "warn",
 
+    // 确保import在其他语句之前
     "import/first": "warn",
+
+    // 确保每个import语句后都有一个空行
     "import/newline-after-import": "warn",
+
+    // 禁止多次import同一个模块
     "import/no-duplicates": "error",
+
     // 针对css和svg等无法识别的import，这边关闭了校验
     "import/no-unresolved": "off",
+
+    // 禁止使用默认导出的模块成员名称
     "import/no-named-as-default-member": "off",
+
+    // import排序
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",
+
+    // 避免使用未声明的React变量
     "react/react-in-jsx-scope": "off",
+
+    // 按照一定规则排序props
     "react/jsx-sort-props": [
       "warn",
       {
