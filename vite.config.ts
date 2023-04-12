@@ -1,8 +1,9 @@
-import { loadEnv } from "vite";
-import type { ConfigEnv, UserConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import legacy from "@vitejs/plugin-legacy";
 import { fileURLToPath } from "url";
+import type { ConfigEnv, UserConfig } from "vite";
+import { loadEnv } from "vite";
+
+import legacy from "@vitejs/plugin-legacy";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default (config: ConfigEnv): UserConfig => {

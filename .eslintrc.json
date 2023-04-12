@@ -111,7 +111,27 @@
     "import/no-named-as-default-member": "off",
 
     // import排序
-    "simple-import-sort/imports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // // Node.js builtins. You could also generate this regex if you use a `.js` config.
+          // [`^(${require("module").builtinModules.join("|")})(/|$)`],
+          // Packages. `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Internal packages.
+          ["^(constants|utils)(/.*|$)", "^@[^/]+"],
+          // Parent imports. Put `..` last.
+          ["^@/", "^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.s?css$"],
+          // svg imports
+          ["^.+\\.svg$"]
+        ]
+      }
+    ],
     "simple-import-sort/exports": "warn",
 
     // 避免使用未声明的React变量
