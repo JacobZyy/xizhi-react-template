@@ -17,6 +17,7 @@ export default (config: ConfigEnv): UserConfig => {
       },
     },
     server: {
+      host: env.VITE_APP_HOST,
       port: Number(env.VITE_APP_PORT),
       proxy: {
         "/api": {

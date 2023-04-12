@@ -1,37 +1,31 @@
-import React, { useState } from "react";
+import { Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import zhCN from "antd/locale/zh_CN";
 
-import "./App.css";
+import Layout from "./Layout";
+import routers from "./router";
 
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import "antd/dist/reset.css";
+import "@/styles/global.scss";
+
+import "dayjs/locale/zh-cn";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + Reactaaaaaaaaaaaaaa</h1>
-      <h1>Vite + Reactaaaaaaaaaaaaaa</h1>
-      <h1>Vite + Reactaaaaaaaaaaaaaa</h1>
-      <h1>Vite + Reactaaaaaaaaaaaaaa</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}></button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <ConfigProvider locale={zhCN}>
+      <Layout>
+        <Router>
+          <Suspense fallback={<div>loading...</div>}>
+            <Routes>
+              {routers.map((route) => (
+                <Route key={route.path} {...route} />
+              ))}
+            </Routes>
+          </Suspense>
+        </Router>
+      </Layout>
+    </ConfigProvider>
   );
 }
 
