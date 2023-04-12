@@ -2,17 +2,20 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
 
-const ClassC = () => {
+const HelloPage: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      Class Component222
+    <>
+      Hello World
       <Button
         onClick={() => {
-          navigate("/");
+          navigate("/settings");
         }}
-      ></Button>
-    </div>
+      >
+        btn
+      </Button>
+    </>
   );
 };
-export default ClassC;
+
+export default HelloPage;
