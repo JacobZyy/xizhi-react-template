@@ -1,15 +1,14 @@
-import React, { lazy } from "react";
-import { Navigate, RouteProps } from "react-router";
+import { lazy } from "react";
+import { Navigate } from "react-router";
+
+import { RoutersType } from "@/types/routersType";
+
+import RouterPermission from "./RouterPermission";
 
 const HelloPage = lazy(() => import("@/pages/HelloPage"));
 const ClassC = lazy(() => import("@/pages/ClassC"));
 const Son = lazy(() => import("@/pages/ClassC/components/Son"));
 const NoFoundPage = lazy(() => import("@/pages/404Page"));
-
-export type RoutersType = {
-  name?: string;
-  key: string;
-} & RouteProps;
 
 const routers: RoutersType[] = [
   {
@@ -27,36 +26,14 @@ const routers: RoutersType[] = [
     name: "设置",
     key: "settingspage",
     path: "/settings",
+    role: ["admin"],
     element: <ClassC></ClassC>,
   },
   {
     path: "/settings/sonPath",
     element: <Son></Son>,
     name: "儿子设置",
-    key: "sonsettingspage",
-  },
-  {
-    path: "/settings/sonPath",
-    element: <Son></Son>,
-    name: "儿子设置",
-    key: "sonsettingspage",
-  },
-  {
-    path: "/settings/sonPath",
-    element: <Son></Son>,
-    name: "儿子设置",
-    key: "sonsettingspage",
-  },
-  {
-    path: "/settings/sonPath",
-    element: <Son></Son>,
-    name: "儿子设置",
-    key: "sonsettingspage",
-  },
-  {
-    path: "/settings/sonPath",
-    element: <Son></Son>,
-    name: "儿子设置",
+    role: ["admin"],
     key: "sonsettingspage",
   },
   {
