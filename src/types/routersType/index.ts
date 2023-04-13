@@ -6,6 +6,7 @@ export type roleType = "admin" | "user";
 export type RoutersType = {
   name?: string;
   key: string;
+  hasLayout?: boolean;
   role?: roleType[] | undefined;
 } & RouteProps;
 

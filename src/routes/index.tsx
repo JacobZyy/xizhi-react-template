@@ -1,20 +1,27 @@
 import { lazy } from "react";
 import { Navigate } from "react-router";
 
+import NoFoundPage from "@/pages/404Page";
 import { RoutersType } from "@/types/routersType";
 
 import RouterPermission from "./RouterPermission";
 
+const LoginPage = lazy(() => import("@/pages/Login/Login"));
 const HelloPage = lazy(() => import("@/pages/HelloPage"));
 const ClassC = lazy(() => import("@/pages/ClassC"));
 const Son = lazy(() => import("@/pages/ClassC/components/Son"));
-const NoFoundPage = lazy(() => import("@/pages/404Page"));
 
 const routers: RoutersType[] = [
   {
     key: "redirect of /",
     path: "/",
     element: <Navigate replace to="/home" />,
+  },
+  {
+    key: "loginPage",
+    path: "/login",
+    hasLayout: false,
+    element: <LoginPage />,
   },
   {
     name: "首页",
@@ -39,6 +46,7 @@ const routers: RoutersType[] = [
   {
     path: "*",
     name: "404",
+    hasLayout: false,
     key: "404notfount",
     element: <NoFoundPage />,
   },
