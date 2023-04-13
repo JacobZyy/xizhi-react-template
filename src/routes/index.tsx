@@ -19,6 +19,7 @@ const routers: RoutersType[] = [
   },
   {
     key: "loginPage",
+    name: "登录",
     path: "/login",
     hasLayout: false,
     element: <LoginPage />,

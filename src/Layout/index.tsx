@@ -23,6 +23,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       return pre;
     }, {});
   }, []);
+
   return (
     <AntLayout>
       <Sider collapsible trigger={null} collapsed={collapsed}>
