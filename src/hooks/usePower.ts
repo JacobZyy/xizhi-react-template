@@ -1,7 +1,7 @@
 import React from "react";
 
 import { roleType } from "@/types/routersType";
-import { localStorage } from "@/utils/storage";
+import { storage } from "@/utils/storage";
 
 /**
  * usepower 当前是仅取存储在 localStorage 中的用户类型
@@ -15,7 +15,7 @@ const fakeStorageUserInfo = {
 };
 
 const usePower = (): roleType => {
-  const { userType } = localStorage.get("userInfo") || fakeStorageUserInfo;
+  const { userType } = storage.get("userInfo") || fakeStorageUserInfo;
   return userType;
 };
 

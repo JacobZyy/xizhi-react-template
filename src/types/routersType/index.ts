@@ -3,14 +3,17 @@ import { RouteProps } from "react-router";
 // 定义权限类型
 export type roleType = "admin" | "user";
 
-export type RoutersType = {
+export type baseRouteType = {
   name?: string;
   key: string;
   hasLayout?: boolean;
   role?: roleType[] | undefined;
-} & RouteProps;
+};
+
+export type RoutersType = baseRouteType & RouteProps;
 
 export type RouterPermissionType = {
-  role: roleType[] | undefined;
-  [key: string]: unknown;
+  path?: string;
+  role?: roleType[];
+  hasLayout: boolean;
 };

@@ -1,4 +1,4 @@
-export const localStorage = {
+export const storage = {
   get(key: string) {
     return JSON.parse(window.localStorage.getItem(key) as string);
   },
