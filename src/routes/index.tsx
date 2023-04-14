@@ -55,9 +55,9 @@ const routers: RoutersType[] = [
 
 const poweredRouters = routers.map((route) => {
   const { element, hasLayout = true, role, ...rest } = route;
-  if (route.path === "/login") {
-    return route;
-  }
+  // if (route.path === "/login") {
+  //   return route;
+  // }
   return {
     element: (
       <RouterPermission path={route.path} role={role} hasLayout={hasLayout}>

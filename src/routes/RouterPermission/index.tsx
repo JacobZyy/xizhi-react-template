@@ -11,16 +11,23 @@ const RouterPermission: React.FC<PropsWithChildren<RouterPermissionType>> = (
 ) => {
   const { path, role, hasLayout, children } = props;
 
+  const isLogin = path === "/login";
+
   const userToken = storage.get("token"); // 判断登录状态
   const userType = usePower(); // 用户类型
+
+  // path 为login时的跳转思路
+  if (isLogin) {
+    return userToken ? (
+      <Navigate replace to="/home" />
+    ) : (
+      <Suspense fallback={"loading"}>{children}</Suspense>
+    );
+  }
+
   // 未登录则跳转登录
   if (!userToken) {
     return <Navigate replace to="/login" />;
-  }
-
-  // 已登录且当前path为登录页的时候跳转至home
-  if (path === "/login") {
-    return <Navigate replace to="/home" />;
   }
 
   // 没有权限则跳转404
@@ -30,8 +37,9 @@ const RouterPermission: React.FC<PropsWithChildren<RouterPermissionType>> = (
   }
 
   // 没有layout需求则添加layout
-  if (!hasLayout) return <Suspense fallback={"loading"}>{children}</Suspense>;
-
+  if (!hasLayout) {
+    return <Suspense fallback={"loading"}>{children}</Suspense>;
+  }
   // 通用状态
   return <Layout>{children}</Layout>;
 };
