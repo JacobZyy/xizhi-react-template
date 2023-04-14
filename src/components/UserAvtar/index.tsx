@@ -1,67 +1,79 @@
 import React from "react";
 import { Avatar, Button, Dropdown, MenuProps, Space } from "antd";
 
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import {
+  CaretDownOutlined,
+  DownOutlined,
+  SmileOutlined,
+} from "@ant-design/icons";
 
 import avataalogo from "@/assets/logo/avatar.png";
 
 import styles from "./index.module.scss";
 
 const UserAvtar: React.FC = () => {
+  const handleChangePwd = () => {
+    console.log("修改密码");
+  };
+
+  const handleLogout = () => {
+    console.log("退出登录");
+  };
+
   const items: MenuProps["items"] = [
     {
-      key: "1",
+      key: "icon",
+      className: styles["dropdownItem"],
       label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          1st menu item
-        </a>
-      ),
-    },
-    {
-      key: "2",
-      label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.aliyun.com"
-        >
-          2nd menu item (disabled)
-        </a>
-      ),
-      icon: <SmileOutlined />,
-      disabled: true,
-    },
-    {
-      key: "3",
-      label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.luohanacademy.com"
-        >
-          3rd menu item (disabled)
-        </a>
+        <Avatar
+          shape="square"
+          size="large"
+          className={styles["userLogo"]}
+          icon={<img src={avataalogo} alt="name" />}
+        />
       ),
       disabled: true,
+      style: { cursor: "default" },
     },
     {
-      key: "4",
-      danger: true,
-      label: "a danger item",
+      key: "username",
+      label: "username",
+      disabled: true,
+      className: styles["dropdownItem"],
+      style: { cursor: "default" },
+    },
+    {
+      key: "changePwd",
+      className: styles["dropdownItem"],
+      label: (
+        <Button type="text" onClick={handleChangePwd}>
+          修改密码
+        </Button>
+      ),
+    },
+    {
+      key: "logout",
+      className: styles["dropdownItem"],
+      label: (
+        <Button type="text" onClick={handleLogout}>
+          退出登录
+        </Button>
+      ),
     },
   ];
   return (
     <div className={styles["container"]}>
-      <Dropdown menu={{ items }} trigger={["click"]}>
+      <Dropdown
+        menu={{ items }}
+        trigger={["click"]}
+        className={styles["dropdownMenu"]}
+      >
         <Button
+          type="link"
           className={styles["menuTrigger"]}
           onClick={(e) => e.preventDefault()}
         >
-          <Space>
+          <Space size="small">
             <Avatar
               shape="square"
               size="large"
@@ -69,6 +81,7 @@ const UserAvtar: React.FC = () => {
               icon={<img src={avataalogo} alt="name" />}
             />
             <span className={styles["username"]}>username</span>
+            <CaretDownOutlined />
           </Space>
         </Button>
       </Dropdown>
