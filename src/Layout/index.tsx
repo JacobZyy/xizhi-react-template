@@ -5,7 +5,7 @@ import Sider from "antd/es/layout/Sider";
 
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
-import { MenuBar, NavBar } from "@/components";
+import { MenuBar, NavBar, UserAvtar } from "@/components";
 import routers from "@/routes";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -43,6 +43,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
             }
           )}
           <NavBar routerMap={routerMap}></NavBar>
+          <UserAvtar></UserAvtar>
         </Header>
         <Content
           style={{
