@@ -64,6 +64,8 @@ const baseRequestHeader = {
 // 超时时间
 const timeout = 15000;
 
+// const requestControllers: Map<string, AbortController> = new Map();
+
 function fetch<T>(
   url: string,
   options: FetchOptions = {}
@@ -87,6 +89,9 @@ function fetch<T>(
 
   //  监控当前请求
   const requestController = new AbortController();
+  // // 将当前请求装入request
+  // requestControllers.set(url, requestController);
+
   const signal = requestController.signal;
 
   // 发起请求

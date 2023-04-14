@@ -3,7 +3,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "extends": [
     // eslint内置规则集
@@ -23,11 +24,11 @@
     "prettier",
     "jsx-a11y",
     "@typescript-eslint",
-    "simple-import-sort"
+    "simple-import-sort",
+    "jest"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.eslint.json",
     "ecmaVersion": "latest",
     "sourceType": "module",
     "ecmaFeatures": {
@@ -44,7 +45,6 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "./tsconfig.eslint.json",
         "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`.
       }
     }
