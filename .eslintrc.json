@@ -6,11 +6,14 @@
     "node": true
   },
   "extends": [
+    // eslint内置规则集
     "eslint:recommended",
-    "plugin:import/recommended", // Linting of ES2015+ import/export syntax.
+    // 校验import和export语法的插件的推荐规则集，支持检查导入路径，且可以对import进行排序
+    "plugin:import/recommended",
+    // 校验 React 代码规范的一个推荐规则集。该插件支持检查 React 组件的使用方式是否符合规范，并可以检查 React JSX 语法的正确性。
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended", // Recommended react hooks linting configs.
-    "plugin:jsx-a11y/recommended", // Turns on a11y rules for JSX.
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
