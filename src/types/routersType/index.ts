@@ -8,6 +8,7 @@ export type baseRouteType = {
   key: string;
   hasLayout?: boolean;
   role?: roleType[] | undefined;
+  meta?: Record<string, unknown>;
 };
 
 export type RoutersType = baseRouteType & RouteProps;

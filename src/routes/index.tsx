@@ -43,6 +43,9 @@ const routers: RoutersType[] = [
     name: "儿子设置",
     role: ["admin"],
     key: "sonsettingspage",
+    meta: {
+      title: "儿子设置",
+    },
   },
   {
     path: "*",
